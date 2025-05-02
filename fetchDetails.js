@@ -13,8 +13,8 @@ const list = await CSV.fetchJSON(fn, []);
 //const start = 29916; // 2025-05-01 + 1
 //const end = 29916; // 9999
 
-const start = 1; // 2025-05-01 + 1
-const end = 29975; // 9999
+const start = 29976; // 2025-05-02
+const end = 29999; // 
 
 const updateCSV = async (fn, list) => {
   const res = [];
@@ -35,5 +35,5 @@ for (let i = start; i <= end; i++) {
   list.push(data);
   //await updateCSV(fn, list);
   await Deno.writeTextFile(fn, CSV.stringify(list));
-  await sleep(Math.random() * 1000 + 1000);
+  await sleep(Math.random() * 100 + 100);
 }
